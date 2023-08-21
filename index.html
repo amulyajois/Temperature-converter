@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        function convert() {
+            var fahrenheit = document.getElementById("fahrenheit").value;
+            var celsius = document.getElementById("celsius").value;
+            var kelvin = document.getElementById("kelvin").value;
+
+
+            fahrenheit = (parseFloat(celsius) * 1.8) + 32;
+            kelvin = (parseFloat(celsius)) + 273.15;
+
+            document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+            document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
+            document.getElementById('kelvin').value = parseFloat(kelvin).toFixed(1);
+        }
+        function clearForm() {
+            document.getElementById('fahrenheit').value = '';
+            document.getElementById('celsius').value = '';
+            document.getElementById('kelvin').value = '';
+
+        }
+    </script>
+    <form>
+        <center>
+            <h2>Temperature converter</h2>
+
+            <label for="name">Celsius: </label>
+            <input type="number" id="celsius" placeholder="C" name="celsius" />
+            <label for="name">Fahrenheit: </label>
+            <input type="number" id="fahrenheit" placeholder="F" name="fahrenheit" />
+            <label for="name">Kelvin:  </label>
+            <input type="number" id="kelvin" placeholder="K" name="kelvin" /><br><br>
+            <input type="button" value="convert" onclick="convert()" />
+            <input type="button" value="clear" onclick="clearForm()" />
+        </center>
+    </form>
+</body>
+
+</html>
