@@ -42,3 +42,14 @@ div{
     margin-top: 30vh;
     background-color:rgb(205, 137, 239);
 }
+@media only screen and (max-width: 600px)
+{
+    h2{
+        font-size: 30px;
+    }
+    div{
+        margin-top: 20vh;
+        margin-left: 1vh;
+        margin-right: 1vh;
+    }
+}
