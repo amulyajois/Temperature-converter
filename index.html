@@ -15,10 +15,32 @@
             var fahrenheit = document.getElementById("fahrenheit").value;
             var celsius = document.getElementById("celsius").value;
             var kelvin = document.getElementById("kelvin").value;
-
-
             fahrenheit = (parseFloat(celsius) * 1.8) + 32;
             kelvin = (parseFloat(celsius)) + 273.15;
+            
+
+            document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+            document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
+            document.getElementById('kelvin').value = parseFloat(kelvin).toFixed(1);
+        }
+        function convert1() {
+            var fahrenheit = document.getElementById("fahrenheit").value;
+            var celsius = document.getElementById("celsius").value;
+            var kelvin = document.getElementById("kelvin").value;
+            celsius=(parseFloat(fahrenheit)-32)*0.5556;
+            kelvin=(parseFloat(fahrenheit)-32)*0.5556+273.15;
+
+            document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+            document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
+            document.getElementById('kelvin').value = parseFloat(kelvin).toFixed(1);
+        }
+        function convert2() {
+            var fahrenheit = document.getElementById("fahrenheit").value;
+            var celsius = document.getElementById("celsius").value;
+            var kelvin = document.getElementById("kelvin").value;
+            fahrenheit=(parseFloat(kelvin)-273.15)*1.8+32;
+            celsius=(parseFloat(kelvin)-273.15);
+            
 
             document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
             document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
@@ -33,16 +55,20 @@
     </script>
     <form>
         <center>
-            <h2>Temperature converter</h2>
+            <div><h2>Temperature converter</h2>
 
-            <label for="name">Celsius: </label>
-            <input type="number" id="celsius" placeholder="C" name="celsius" />
-            <label for="name">Fahrenheit: </label>
-            <input type="number" id="fahrenheit" placeholder="F" name="fahrenheit" />
-            <label for="name">Kelvin:  </label>
-            <input type="number" id="kelvin" placeholder="K" name="kelvin" /><br><br>
-            <input type="button" value="convert" onclick="convert()" />
-            <input type="button" value="clear" onclick="clearForm()" />
+            <label for="name">C: </label>
+            <input type="number" id="celsius" placeholder="Celsius" name="celsius" />
+            <input type="button" value="convert" onclick="convert()" /><br>
+           
+            <label for="name">F: </label>
+            <input type="number" id="fahrenheit" placeholder="Fahrenheit" name="fahrenheit" />
+            <input type="button" value="convert" onclick="convert1()" /><br>
+          
+            <label for="name">K:  </label>
+            <input type="number" id="kelvin" placeholder="Kelvin" name="kelvin" />
+            <input type="button" value="convert" onclick="convert2()" /><br><br>
+            <input type="button" value="clear" onclick="clearForm()" /></div>
         </center>
     </form>
 </body>
